@@ -4,9 +4,9 @@
     "description": "h5通用基础开发库",
     "main": "index.js",
     "scripts": {
-        "start": "vue-cli-service serve --open",
+        "start": "vue-cli-service serve",
         "test": "vue-cli-service build --mode test",
-        "build": "vue-cli-service build --mode prod"
+        "build": "vue-cli-service build --mode prod --modern"
     },
     "keywords": [
         "h5、vue、less"

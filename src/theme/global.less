@@ -1,0 +1,84 @@
+//
+// Copyright (c) 2020 北银金融科技有限责任公司
+//
+// 组件全局默认样式
+//
+@import "base";
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: @color-text-dark;
+    font-size: @text-lg;
+    font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.form {
+    text, view {
+        font-size: @text-form;
+    }
+}
+
+.button {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.2em;
+    background-color: @color-primary;
+    color: @color-white;
+    font-size: @text-lg;
+    border-radius: rpx(18);
+}
+
+.button::after {
+    border: none;
+}
+
+.button.button-hover {
+    color: @color-white;
+    background-color: @color-primary-darken;
+}
+
+.button.shadow {
+    box-shadow: rpx(0) rpx(0) rpx(10) fade(@color-primary, 50%);
+}
+
+.button.secondary {
+    background-color: @color-secondary;
+}
+
+.button.secondary.button-hover {
+    background-color: @color-secondary-darken;
+}
+
+.button.secondary.shadow {
+    box-shadow: rpx(0) rpx(0) rpx(10) fade(@color-secondary, 50%);
+}
+
+.button.plain {
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    color: @color-text-dark;
+    background: transparent;
+    border: none !important;
+    border-radius: 0;
+}
+
+.button.plain.button-hover {
+    color: @color-text-normal;
+}
+
+.button.bordered::after {
+    border: rpx(9) solid @color-primary;
+}
+
+.button.fixed-width {
+    width: rpx(480);
+    align-self: center;
+}

@@ -1,0 +1,44 @@
+//
+// Copyright (c) 2020 北银金融科技有限责任公司
+//
+// 通用样式定义
+//
+@import "./constants";
+
+.image-size(@size) {
+    min-height: rpx(@size);
+    min-width: rpx(@size);
+    height: rpx(@size);
+    width: rpx(@size);
+    vertical-align: middle;
+}
+
+.radius(@size) {
+    border-radius: rpx(@size);
+}
+
+.mh(@size) {
+    margin-left: rpx(@size);
+    margin-right: rpx(@size);
+}
+
+.mv(@size) {
+    margin-top: rpx(@size);
+    margin-bottom: rpx(@size);
+}
+
+.ph(@size) {
+    padding-left: rpx(@size);
+    padding-right: rpx(@size);
+}
+
+.pv(@size) {
+    padding-top: rpx(@size);
+    padding-bottom: rpx(@size);
+}
+
+.divider(@size, @bg: #fff) {
+    width: 100%;
+    height: rpx(@size);
+    background-color: @bg;
+}
