@@ -6,7 +6,7 @@
     "scripts": {
         "start": "vue-cli-service serve",
         "test": "vue-cli-service build --mode test",
-        "build": "vue-cli-service build --mode prod --modern"
+        "build": "vue-cli-service build --mode prodution --modern"
     },
     "keywords": [
         "h5、vue、less"
