@@ -2,7 +2,7 @@ const path = require('path');
 const resolve = dir => path.join(__dirname, dir);
 
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production' ? './' : '/', // 署应用包时的基本 URL。 vue-router hash 模式使用
+    publicPath: process.env.NODE_ENV === 'prod' ? './' : '/', // 署应用包时的基本 URL。 vue-router hash 模式使用
     assetsDir: 'static', // outputDir的静态资源(js、css、img、fonts)目录
     devServer: {
         port: 8080, // 端口
