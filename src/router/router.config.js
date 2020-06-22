@@ -26,6 +26,12 @@ const routes = [
         component: () => import('@/page/map/index'),
         meta: { title: '地图网点', keepAlive: false }
     },
+    {
+        path: '/qrcode',
+        name: 'QRcode',
+        component: () => import('@/page/qrcode/index'),
+        meta: { title: '二维码', keepAlive: false }
+    },
 ];
 
 export default routes;
