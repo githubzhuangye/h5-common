@@ -4,6 +4,7 @@
         <div id="qrcode" ref="qrcode"></div>
 
         <div v-on:click="handleGetQuery">获取url参数</div>
+        <div v-on:click="handleSaveQrcode">保存二维码</div>
     </div>
 </template>
 
@@ -41,7 +42,18 @@ export default {
         // 获取url参数
         handleGetQuery() {
             const query = this.$route.query;
-            console.log('juqey', JSON.stringify(query));
+        },
+
+        // 保存二维码
+        handleSaveQrcode() {
+            const myCanvas = document
+                .getElementById('qrcode')
+                .getElementsByTagName('canvas');
+
+            const elementA = document.createElement('a');
+            elementA.href = myCanvas[0].toDataURL('image/png');
+            elementA.download = '二维码';
+            elementA.click();
         },
     },
 };
