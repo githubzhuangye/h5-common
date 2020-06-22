@@ -18,7 +18,13 @@ const C_RESP = {
     OK: 0,
 };
 
+const AMAP = {
+    KEY: ENV.amapKey,
+    API_URL: 'https://webapi.amap.com/maps?v=1.4.15',
+}
+
 export default {
     ...C_API,
     ...C_RESP,
+    AMAP,
 };

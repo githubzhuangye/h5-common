@@ -1,84 +1,329 @@
 //
 // Copyright (c) 2020 北银金融科技有限责任公司
 //
-// 组件全局默认样式
+// 通用样式定义
 //
-@import "base";
+@import "constants";
+@import "margin";
+@import "font";
 
-.page {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    color: @color-text-dark;
-    font-size: @text-lg;
-    font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
+html,
+body,
+div,
+span,
+p,
+form,
+input,
+label {
+    margin: 0;
+    padding: 0;
 }
 
-.form {
-    text, view {
-        font-size: @text-form;
+/*
+ * 基础的通用样式
+ */
+
+/****** flex布局 ******/
+.flex1 {
+    flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.row-center {
+    .row;
+    justify-content: center;
+}
+
+.row-end {
+    .row;
+    justify-content: flex-end;
+}
+
+.row-between {
+    .row;
+    justify-content: space-between;
+}
+
+.row-around {
+    .row;
+    justify-content: space-around;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.column-center {
+    .column;
+    align-items: center;
+    justify-content: center;
+}
+
+.column-end {
+    .column;
+    justify-content: flex-end;
+}
+
+.column-around {
+    .column;
+    justify-content: space-around;
+}
+
+.column-between {
+    .column;
+    justify-content: space-between;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+/****** 圆角 ******/
+
+/****** 圆角 ******/
+.r8 {
+    .radius(8);
+}
+
+.r10 {
+    .radius(10);
+}
+
+.r12 {
+    .radius(12);
+}
+
+.r16 {
+    .radius(16);
+}
+
+.rt8 {
+    .radius(8 8 0 0);
+}
+
+.rb8 {
+    .radius(0 0 8 8);
+}
+
+.r500 {
+    .radius(500); // 胶囊
+}
+
+
+/****** 边框 *****/
+.bd {
+    border: @border;
+}
+
+.bd-t {
+    border-top: @border;
+}
+
+.bd-b {
+    border-bottom: @border;
+}
+
+
+.bd-i-t {
+    position: relative;
+
+    &:after {
+        .bd-t;
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        height: rpx(2);
+        color: @color-border;
+        -webkit-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        left: rpx(32);
+        right: rpx(32);
     }
 }
 
-.button {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.2em;
-    background-color: @color-primary;
-    color: @color-white;
-    font-size: @text-lg;
-    border-radius: rpx(18);
+.bd-i-b {
+    position: relative;
+
+    &:after {
+        .bd-b;
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        height: rpx(2);
+        color: @color-border;
+        -webkit-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        left: rpx(32);
+        right: rpx(32);
+    }
 }
 
-.button::after {
-    border: none;
+
+/****** 悬浮框 ******/
+.float-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 1000;
 }
 
-.button.button-hover {
-    color: @color-white;
-    background-color: @color-primary-darken;
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-.button.shadow {
-    box-shadow: rpx(0) rpx(0) rpx(10) fade(@color-primary, 50%);
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
 }
 
-.button.secondary {
-    background-color: @color-secondary;
+
+/****** 行数隐藏 *******/
+.line-one {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
 }
 
-.button.secondary.button-hover {
-    background-color: @color-secondary-darken;
+.line-two {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
-.button.secondary.shadow {
-    box-shadow: rpx(0) rpx(0) rpx(10) fade(@color-secondary, 50%);
+.line-three {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
-.button.plain {
-    line-height: normal;
-    margin: 0;
-    padding: 0;
-    color: @color-text-dark;
-    background: transparent;
-    border: none !important;
-    border-radius: 0;
+
+/****** 显示隐藏 ******/
+.hide {
+    display: none;
 }
 
-.button.plain.button-hover {
-    color: @color-text-normal;
+.relative {
+    position: relative;
 }
 
-.button.bordered::after {
-    border: rpx(9) solid @color-primary;
+.border-box {
+    box-sizing: border-box;
 }
 
-.button.fixed-width {
-    width: rpx(480);
-    align-self: center;
+/******* 宽 高 ******/
+.m-h-100 {
+    min-height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+
+//****** 通用背景 ******/
+.bg-white {
+    background-color: @color-bg-white;
+}
+
+.bg-gray {
+    background-color: @color-bg-gray;
+}
+
+.bg-img {
+    background-color: @color-bg-image;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: '拾艺';
+        color: #bcc6cf;
+        z-index: -1;
+        font-size: rpx(40);
+    }
+}
+
+.bg-img-sm {
+    background-color: @color-bg-image;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: '拾艺';
+        color: #bcc6cf;
+        z-index: -1;
+        font-size: rpx(20);
+    }
+}
+
+/*******内容为空********/
+.empty {
+    width: 100%;
+    padding-top: rpx(330);
+    text-align: center;
+    font-size: rpx(28);
+    color: #666666;
+    margin-bottom: rpx(50);
+}
+
+.oh {
+    overflow: hidden;
 }
