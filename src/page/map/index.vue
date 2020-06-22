@@ -21,12 +21,8 @@ export default {
     async created() {
         // 已载入高德地图API，则直接初始化地图
         if (this.aMap) {
-            console.log(1);
-
             this.initMap();
         } else {
-            console.log(2);
-
             // 未载入高德地图API，则先载入API再初始化
             await loadAmap(`${C.AMAP.API_URL}&key=${C.AMAP.KEY}`);
             this.initMap();
@@ -41,7 +37,6 @@ export default {
                 center: [117.0009, 36.6758],
                 zoom: 12,
             });
-            console.log('this.amap', this.aMap);
         },
     },
 };
@@ -52,7 +47,7 @@ export default {
 
     .map-box {
         width: 100%;
-        height: 100vh;
+        height: 200vh;
     }
 }
 </style>

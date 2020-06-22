@@ -20,7 +20,7 @@ const C_RESP = {
 
 const AMAP = {
     KEY: ENV.amapKey,
-    API_URL: 'https://webapi.amap.com/maps?v=1.4.15',
+    API_URL: 'https://webapi.amap.com/maps?v=1.3',
 }
 
 export default {
