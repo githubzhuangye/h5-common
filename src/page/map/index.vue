@@ -28,7 +28,7 @@ export default {
             console.log(2);
 
             // 未载入高德地图API，则先载入API再初始化
-            // await loadAmap(`${C.AMAP.API_URL}&key=${C.AMAP.KEY}`);
+            await loadAmap(`${C.AMAP.API_URL}&key=${C.AMAP.KEY}`);
             this.initMap();
         }
     },
